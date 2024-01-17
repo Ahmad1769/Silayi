@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "316233519717",
+    "firebase_url": "https://silayi-a1ecf-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "silayi-a1ecf",
+    "storage_bucket": "silayi-a1ecf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316233519717:android:a7200f87a26898d092ac8c",
+        "android_client_info": {
+          "package_name": "com.example.silayi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316233519717-rg14mpj8d0o0ad4dusa4gt8odaa9qiuf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvtCZcMPXoT91BZu0hqgzVO14Vs2xyXfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316233519717-rg14mpj8d0o0ad4dusa4gt8odaa9qiuf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

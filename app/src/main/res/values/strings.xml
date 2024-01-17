@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Silayi</string>
+    <string name="dummy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy</string>
+    <string name="user">User</string>
+    <string name="services">Services</string>
+    <string name="welcome">Welcome</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="welcome_to_ez_sial">Welcome To  Silayi App</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="select_which_password_recovery_selection_you_want_use_to_reset_password">Select which password recovery selection you want use to reset password.</string>
+    <string name="otp">Please enter OTP received on your registered mobile number</string>
+    <string name="verifiy">Verifiy</string>
+    <string name="update">UPDATE</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="formal">Formal</string>
+    <string name="women">Women</string>
+    <string name="cotton_name">Cotton name</string>
+    <string name="_5_star">5 Star</string>
+    <string name="total_tax">Total Tax</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="default_web_client_id">DA:39:A3:EE:5E:6B:4B:0D:32:55:BF:EF:95:60:18:90:AF:D8:07:09</string>
+</resources>
