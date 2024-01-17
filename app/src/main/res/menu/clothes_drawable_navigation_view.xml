@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Pending Order" android:id="@+id/OrderReceived" android:icon="@drawable/baseline_remove_red_eye_24"/>
+    <item android:title="Total Earning" android:id="@+id/TotalEarning" android:icon="@drawable/baseline_shopping_cart"/>
+    <item android:title="All Product" android:id="@+id/TotalProduct" android:icon="@drawable/baseline_shopping_cart"/>
+</menu>
