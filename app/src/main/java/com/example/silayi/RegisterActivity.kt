@@ -76,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
                         userRef.setValue(userData).addOnCompleteListener { databaseTask ->
                             if (databaseTask.isSuccessful) {
                                 Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show()
-                                // Additional logic to navigate to the next screen or perform other actions
+                                startActivity(Intent(this,Measurement::class.java))
                             } else {
                                 Toast.makeText(this, "Database registration failed", Toast.LENGTH_SHORT).show()
                             }
