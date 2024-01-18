@@ -64,6 +64,7 @@
             android:padding="30dp">
 
             <TextView
+                android:id="@+id/clothesNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Clothes Nmae"
@@ -71,6 +72,7 @@
                 android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/productKeywordTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Product Keyword"
@@ -160,6 +162,7 @@
                 android:background="@drawable/buttonround">
 
                 <TextView
+                    android:id="@+id/price_tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="50dp"

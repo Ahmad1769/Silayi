@@ -1,0 +1,80 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkblue"
+    android:padding="16dp">
+
+    <!-- User Image -->
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/anas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:contentDescription="User Image" />
+
+    <!-- User Name -->
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_below="@id/userImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- User Number -->
+    <TextView
+        android:id="@+id/userNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Number"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_below="@id/userName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <!-- Clothes Category Text -->
+
+    <!-- Tailor Category Text -->
+    <TextView
+        android:id="@+id/clothesCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="86dp"
+        android:text="Clothes Category"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tailorCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tailor Category"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_below="@id/clothesCategory"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tailorCategory"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/buttonround"
+        android:text="Logout"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

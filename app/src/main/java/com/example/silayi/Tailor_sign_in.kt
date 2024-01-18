@@ -1,4 +1,5 @@
 package com.example.silayi
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
@@ -20,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 
-class User_SignIn : AppCompatActivity() {
+class Tailor_sign_in : AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
@@ -34,17 +35,17 @@ class User_SignIn : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_sign_in)
+        setContentView(R.layout.activity_tailor_sign_in)
 
         auth = Firebase.auth
 
-        emailEditText = findViewById(R.id.email)
-        passwordEditText = findViewById(R.id.editText13)
-        signInButton = findViewById(R.id.signup_btn)
-        googleButton = findViewById(R.id.googlebtn)
-        facebookButton = findViewById(R.id.facebookbtn)
-        forgetPasswordText = findViewById(R.id.forgetPassword)
-        val backArrowImage: ImageView = findViewById(R.id.backArrowImage)
+        emailEditText = findViewById(R.id.email1)
+        passwordEditText = findViewById(R.id.editText131)
+        signInButton = findViewById(R.id.signup_btn1)
+        googleButton = findViewById(R.id.googlebtn1)
+        facebookButton = findViewById(R.id.facebookbtn1)
+        forgetPasswordText = findViewById(R.id.forgetPassword1)
+        val backArrowImage: ImageView = findViewById(R.id.backArrowImage1)
 
         signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
@@ -78,7 +79,8 @@ class User_SignIn : AppCompatActivity() {
 
         googleButton.setOnClickListener {
 //            signInWithGoogle()
-            Toast.makeText(this, "Google sign-in logic not implemented", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Google sign-in logic not implemented", Toast.LENGTH_SHORT)
+                .show()
 
         }
 
@@ -92,7 +94,7 @@ class User_SignIn : AppCompatActivity() {
             startActivity(userIntent)
         }
 
-        val registerLink: TextView = findViewById(R.id.registerLink)
+        val registerLink: TextView = findViewById(R.id.registerLink1)
         registerLink.setOnClickListener {
             val registerIntent = Intent(this, RegisterActivity::class.java)
             startActivity(registerIntent)
@@ -120,10 +122,10 @@ class User_SignIn : AppCompatActivity() {
                     if (snapshot.exists()) {
                         val isTailer = snapshot.child("isTailor").getValue(Boolean::class.java)
 
-                        if (isTailer == false) {
+                        if (isTailer == true) {
                             onSignInSuccess()
                         } else {
-                            Toast.makeText(baseContext, "You are a tailer. Please use service screen.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(baseContext, "You are not a tailer. Please use the user screen.", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }    override fun onCancelled(error: DatabaseError) {
@@ -133,9 +135,11 @@ class User_SignIn : AppCompatActivity() {
             })
         }
     }
+
     private fun onSignInSuccess() {
-        val intent = Intent(this, HomeScreen::class.java)
-//        Toast.makeText(this,"Hello going to intent",Toast.LENGTH_SHORT).show()
+        // Example: Navigate to the HomeActivity after successful sign-in
+        val intent = Intent(this, Measurement::class.java)
+        Toast.makeText(this,"Hello going to intent",Toast.LENGTH_SHORT).show()
         startActivity(intent)
         finish()
     }

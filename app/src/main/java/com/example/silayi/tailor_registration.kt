@@ -13,7 +13,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.database.FirebaseDatabase
 
-class RegisterActivity : AppCompatActivity() {
+class tailor_registration : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private val RC_SIGN_IN = 9001
@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         signInLink.setOnClickListener {
-            startActivity(Intent(this, User_SignIn::class.java))
+            startActivity(Intent(this, Tailor_sign_in::class.java))
         }
 
         signUpButton.setOnClickListener {
@@ -43,12 +43,13 @@ class RegisterActivity : AppCompatActivity() {
             val phoneNumber = findViewById<EditText>(R.id.editText12).text.toString()
             val password = findViewById<EditText>(R.id.editText13).text.toString()
 
-            signUpWithEmailAndPassword(email, password,username,phoneNumber,false)
+            signUpWithEmailAndPassword(email, password,username,phoneNumber,true)
         }
 
         googleButton.setOnClickListener {
 //            signInWithGoogle()
             Toast.makeText(this, "Logic Not Implemented boss ", Toast.LENGTH_SHORT).show()
+
         }
     }
 
@@ -70,7 +71,7 @@ class RegisterActivity : AppCompatActivity() {
                         userRef.setValue(userData).addOnCompleteListener { databaseTask ->
                             if (databaseTask.isSuccessful) {
                                 Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show()
-                                startActivity(Intent(this,HomeScreen::class.java))
+                                startActivity(Intent(this,Measurement::class.java))
                             } else {
                                 Toast.makeText(this, "Database registration failed", Toast.LENGTH_SHORT).show()
                             }
@@ -81,7 +82,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
     }
-//
+
 //    private fun signInWithGoogle() {
 //        val signInIntent = GoogleSignIn.getClient(this, getGoogleSignInOptions()).signInIntent
 //        startActivityForResult(signInIntent, RC_SIGN_IN)

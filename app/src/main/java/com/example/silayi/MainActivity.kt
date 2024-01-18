@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         var userButton :androidx.appcompat.widget.AppCompatButton = findViewById(R.id.user)
         var serviceButton:androidx.appcompat.widget.AppCompatButton = findViewById(R.id.service)
 
-        // Setting click listeners
         userButton.setOnClickListener {
             Toast.makeText(this,"Users",Toast.LENGTH_SHORT).show()
             val userIntent = Intent(this, User_SignIn::class.java)
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         serviceButton.setOnClickListener {
             Toast.makeText(this,"Service",Toast.LENGTH_SHORT).show()
-            val serviceIntent = Intent(this, User_SignIn::class.java)
+            val serviceIntent = Intent(this, Tailor_sign_in::class.java)
             startActivity(serviceIntent)
         }
     }

@@ -14,13 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 class TailorAdapter(private val context: Context) :
     RecyclerView.Adapter<TailorAdapter.TailorViewHolder>() {
 
-    // Sample data, replace with your actual data fetched from Firebase
     private val tailorList = listOf(
-        Tailor("Android Khan",5, "image"),
-        Tailor("Android Khan",5, "image"),
-        Tailor("Android Khan",5, "image"),
-        Tailor("Android Khan",5, "image"),
-        // Add more tailor data as needed
+        Tailor("Ahmad ",5000, "image"),
+        Tailor("Rafay",6790, "image"),
+        Tailor("Hameed",1251, "image"),
+        Tailor("Ali",9511, "image"),
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TailorViewHolder {

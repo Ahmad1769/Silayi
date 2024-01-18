@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
     app:cardElevation="20dp"
     app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@color/lightblue"
     android:elevation="10dp"
     android:layout_margin="5dp"
 
@@ -15,15 +16,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/white">
+        android:background="@color/lightblue">
 
         <ImageView
             android:id="@+id/image_cloth"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/profile"
-            tools:layout_editor_absoluteX="35dp"
-            tools:layout_editor_absoluteY="25dp" />
+            android:src="@drawable/clothes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/name_cloth"
@@ -32,8 +37,12 @@
             android:text="Lone Clothes"
             android:textColor="@color/darkblue"
             android:textSize="14sp"
-            tools:layout_editor_absoluteX="117dp"
-            tools:layout_editor_absoluteY="27dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.325"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.308" />
 
 
         <TextView
@@ -43,9 +52,11 @@
             android:text="Size 7 meter"
             android:textColor="@color/darkblue"
             android:textSize="10sp"
-            tools:layout_editor_absoluteX="131dp"
-            tools:layout_editor_absoluteY="46dp" />
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.354"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/cart_price"
@@ -54,8 +65,12 @@
             android:text="$14.99"
             android:textColor="@color/darkblue"
             android:textSize="10sp"
-            tools:layout_editor_absoluteX="131dp"
-            tools:layout_editor_absoluteY="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.361"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.744"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -65,16 +80,24 @@
             android:text="X"
             android:textColor="@color/darkblue"
             android:textSize="10dp"
-            tools:layout_editor_absoluteX="362dp"
-            tools:layout_editor_absoluteY="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.957"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.127"
             tools:ignore="MissingConstraints" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="335dp"
-            tools:layout_editor_absoluteY="64dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.842">
 
             <TextView
                 android:id="@+id/AddBtn"

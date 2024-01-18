@@ -30,7 +30,6 @@ class Measurement : AppCompatActivity() {
         submitSizeButton.setOnClickListener {
             Toast.makeText(this,"username",Toast.LENGTH_SHORT).show()
             saveMeasurements()
-            finish()
         }
     }
 
@@ -66,10 +65,6 @@ class Measurement : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Measurements saved successfully", Toast.LENGTH_SHORT).show()
 
-                        // Return to the home activity
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
                     } else {
                         Toast.makeText(this, "Failed to save measurements", Toast.LENGTH_SHORT).show()
                     }

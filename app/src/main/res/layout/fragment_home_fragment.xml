@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Home_fragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/home_round"
+            android:layout_marginTop="20dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:layout_margin="10dp"
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:iconifiedByDefault="true"
+                android:background="@drawable/search_shape"
+                android:queryHint="Search"
+                app:searchIcon="@drawable/baseline_search_24"
+                />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/banner"/>
+
+            <!-- Categories -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Categories"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/darkblue"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/reCycleView"
+                android:orientation="horizontal"
+                />
+
+            <!-- Popular Tailor -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Popular Tailor"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/darkblue"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tailor_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+            <!-- The most searched clothes -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="The most searched clothes"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/darkblue"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/clothes_recyclerView"
+                android:orientation="horizontal"
+                />
+
+            <!-- Recommended for you -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Recommended for you"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/darkblue"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recommended_recyclerView"
+                android:orientation="horizontal"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

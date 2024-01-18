@@ -253,19 +253,6 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/navigation_round"
-        app:itemIconTint="#FFF"
-        app:itemTextColor="#FFFFFF"
-        app:itemRippleColor="@color/white"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/user_bottom_navigation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

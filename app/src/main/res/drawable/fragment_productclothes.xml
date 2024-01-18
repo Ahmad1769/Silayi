@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/darkblue"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activites.productclothesFragment">
+    android:layout_height="match_parent">
 
 
     <ScrollView
@@ -70,14 +69,14 @@
                     android:layout_height="wrap_content"
                     android:text="Clothes Nmae"
                     android:textColor="@color/darkblue"
-                    android:textSize="@dimen/_20sdp" />
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Product Keyword"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="12dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -87,36 +86,36 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/baseline_star_24" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/baseline_star_24" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/baseline_star_24" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/baseline_star_24" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/baseline_star_24" />
                 </LinearLayout>
 
@@ -131,17 +130,17 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/buttonround"
-                    android:padding="@dimen/_10sdp"
+                    android:padding="10dp"
                     android:text="Add To Size"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="10dp"
                     android:text="Description"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -150,7 +149,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginTop="2dp"
                     android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
                     android:textColor="@color/lightblue"
                     android:textSize="14sp" />
