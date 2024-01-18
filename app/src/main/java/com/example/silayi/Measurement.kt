@@ -30,6 +30,7 @@ class Measurement : AppCompatActivity() {
         submitSizeButton.setOnClickListener {
             Toast.makeText(this,"username",Toast.LENGTH_SHORT).show()
             saveMeasurements()
+            finish()
         }
     }
 
