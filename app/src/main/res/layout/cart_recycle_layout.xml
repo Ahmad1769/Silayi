@@ -11,35 +11,29 @@
     android:layout_margin="5dp"
 
     >
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/white"
-        >
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/image_cloth"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/profile"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="25dp" />
 
         <TextView
             android:id="@+id/name_cloth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="82dp"
             android:text="Lone Clothes"
             android:textColor="@color/darkblue"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/image_cloth"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32999998" />
+            tools:layout_editor_absoluteX="117dp"
+            tools:layout_editor_absoluteY="27dp" />
 
 
         <TextView
@@ -49,40 +43,41 @@
             android:text="Size 7 meter"
             android:textColor="@color/darkblue"
             android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/name_cloth"
-            app:layout_constraintStart_toStartOf="@+id/name_cloth"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.535" />
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="46dp" />
+
+
+        <TextView
+            android:id="@+id/cart_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$14.99"
+            android:textColor="@color/darkblue"
+            android:textSize="10sp"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="64dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/status_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:text="X"
             android:textColor="@color/darkblue"
             android:textSize="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.442"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.168" />
+            tools:layout_editor_absoluteX="362dp"
+            tools:layout_editor_absoluteY="18dp"
+            tools:ignore="MissingConstraints" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.88">
+            tools:layout_editor_absoluteX="335dp"
+            tools:layout_editor_absoluteY="64dp">
 
             <TextView
+                android:id="@+id/AddBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -91,15 +86,16 @@
                 android:textSize="10dp" />
 
             <TextView
+                android:id="@+id/qtyBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="1"
-
                 android:textColor="@color/darkblue"
                 android:textSize="10dp" />
 
             <TextView
+                android:id="@+id/SubtractBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
