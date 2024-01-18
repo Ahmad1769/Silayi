@@ -18,8 +18,15 @@
         <activity
             android:name=".CartActitvity"
             android:exported="false" />
-        <activity
+       <activity
             android:name=".HomeScreen"
+            android:exported="false" />
+      <activity
+            android:name=".Measurement"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         serviceButton.setOnClickListener {
             Toast.makeText(this,"Service",Toast.LENGTH_SHORT).show()
-//            val serviceIntent = Intent(this, ServiceActivity::class.java)
-//            startActivity(serviceIntent)
+            val serviceIntent = Intent(this, User_SignIn::class.java)
+            startActivity(serviceIntent)
         }
     }
 }
