@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/checkout_fragment"
+    android:background="@color/darkblue"
+    tools:context=".CheckoutActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/checkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Checkout"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cardtop"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkout">
+
+            <TextView
+                android:id="@+id/delivaryaddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Delivary Address"
+                android:textColor="@color/darkblue"
+                android:textStyle="bold"
+                android:textSize="12dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:drawableStart="@drawable/baseline_location"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonround"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:hint="New York America"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addNewLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:background="@drawable/buttonround"
+                android:text="Add New Location" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/lightblue_round"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="Payment Method"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/easypaisa"
+                    android:paddingStart="20dp"
+                    android:drawableEnd="@drawable/baseline_arrow_forward"
+                    android:paddingRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/darkblue"
+                    android:background="@drawable/whiteroundbutton"
+                    android:text="Easy Paisa"
+                    android:textAlignment="textStart" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/jazzcash"
+                    android:layout_width="match_parent"
+                    android:drawableEnd="@drawable/baseline_arrow_forward"
+                    android:paddingRight="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/darkblue"
+                    android:background="@drawable/whiteroundbutton"
+                    android:text="Jazz Cash"
+                    android:paddingStart="20dp"
+                    android:textAlignment="textStart" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/visa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/baseline_arrow_forward"
+                    android:paddingRight="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/darkblue"
+                    android:background="@drawable/whiteroundbutton"
+                    android:text="visa"
+                    android:paddingStart="20dp"
+                    android:textAlignment="textStart" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/checkout_recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Summary"
+                android:textAlignment="center"
+                android:textColor="@color/darkblue"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="20dp"
+                android:background="@drawable/lightblue_round"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+
+                    android:background="@drawable/lightblue_round">
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Total Amout"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/totalamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="385.00 Rs"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/subtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Sub Total"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/subamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="385.00 Rs"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonround"
+                    android:textColor="@color/white"
+                    android:text="Confirm"
+                    android:layout_margin="10dp"
+                    android:textAlignment="center"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonround"
+                    android:text="Cancel"
+                    android:textAlignment="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navigation_round"
+        app:itemIconTint="#FFF"
+        app:itemTextColor="#FFFFFF"
+        app:itemRippleColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/user_bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
