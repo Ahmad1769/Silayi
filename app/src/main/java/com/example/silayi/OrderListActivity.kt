@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class OrderListActivity : AppCompatActivity() {
+class OrderListActivity : AppCompatActivity(), OrderActionListener {
 
     private lateinit var orderRecyclerView: RecyclerView
     private lateinit var orderAdapter: OrderAdapter
@@ -22,14 +22,20 @@ class OrderListActivity : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
         orderRecyclerView = findViewById(R.id.orderRecyclerView)
-        orderAdapter = OrderAdapter()
+        orderAdapter = OrderAdapter(this)
 
         orderRecyclerView.layoutManager = LinearLayoutManager(this)
         orderRecyclerView.adapter = orderAdapter
 
         fetchOrdersFromFirebase()
     }
+    override fun onOrderAccepted(orderId: String) {
+        fetchOrdersFromFirebase()
+    }
 
+    override fun onOrderRejected(orderId: String) {
+        fetchOrdersFromFirebase()
+    }
     private fun fetchOrdersFromFirebase() {
         val currentUser = auth.currentUser
         val currentUserid = currentUser?.uid

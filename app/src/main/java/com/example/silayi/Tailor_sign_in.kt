@@ -138,8 +138,7 @@ class Tailor_sign_in : AppCompatActivity() {
     private fun onSignInSuccess() {
         val intent = Intent(this, OrderListActivity::class.java)
 //        Toast.makeText(this,"Hello going to intent",Toast.LENGTH_SHORT).show()
-//        startActivity(intent)
-        finish()
+        startActivity(intent)
     }
 
 //    private fun signInWithGoogle() {

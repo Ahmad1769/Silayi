@@ -1,10 +1,8 @@
 package com.example.silayi
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +14,12 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
+interface OrderActionListener {
+    fun onOrderAccepted(orderId: String)
+    fun onOrderRejected(orderId: String)
+}
+
+class OrderAdapter(private val orderActionListener: OrderActionListener) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var currentUser: FirebaseUser
@@ -77,12 +80,20 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
                         acceptButton.setOnClickListener {
                             showToast("Order Accepted: $orderId")
 
+                            // Notify the activity through the callback
+                            orderActionListener.onOrderAccepted(orderId)
+
+                            // Remove order from the database
                             databaseReference.child(orderId).removeValue()
                         }
 
                         rejectButton.setOnClickListener {
                             showToast("Order Rejected: $orderId")
 
+                            // Notify the activity through the callback
+                            orderActionListener.onOrderRejected(orderId)
+
+                            // Remove order from the database
                             databaseReference.child(orderId).removeValue()
                         }
                     } else {
