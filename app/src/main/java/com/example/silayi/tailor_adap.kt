@@ -52,53 +52,36 @@ class tailor_adap : RecyclerView.Adapter<tailor_adap.TailorViewHolder>() {
             descrTextView.text = tailor.phoneNumber
 
             itemView.setOnClickListener {
-                // Get the user ID of the logged-in user
                 val currentUserID = Firebase.auth.currentUser?.uid
 
-                // Check if the user is logged in
                 if (currentUserID != null) {
-                    // Create a new order node in Firebase with the tailor's user ID as the parent node
                     val orderReference = FirebaseDatabase.getInstance().getReference("orders").child(tailor.id).child(currentUserID)
-
-                    // Fetch cart data from the user's data in Firebase
                     val cartReference = FirebaseDatabase.getInstance().getReference("carts").child(currentUserID)
                     cartReference.addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
-                            // Check if the cart is not empty
                             if (snapshot.exists()) {
-                                // Iterate through each item in the cart
                                 for (cartItemSnapshot in snapshot.children) {
-                                    // Get the item details
                                     val itemName = cartItemSnapshot.key.toString()
                                     val quantity = cartItemSnapshot.child("quantity").getValue(Long::class.java) ?: 0
                                     val totalPrice = cartItemSnapshot.child("totalPrice").getValue(Long::class.java) ?: 0
-
-                                    // Create a map to store the order details
                                     val orderDetails = mapOf(
                                         "itemName" to itemName,
                                         "quantity" to quantity,
                                         "totalPrice" to totalPrice
                                     )
-
-                                    // Save the order details to the order node
                                     orderReference.child(itemName).setValue(orderDetails)
                                 }
-
-                                // Notify the user that the order has been placed
                                 Toast.makeText(itemView.context, "Order placed successfully", Toast.LENGTH_SHORT).show()
                             } else {
-                                // Notify the user that the cart is empty
                                 Toast.makeText(itemView.context, "Cart is empty", Toast.LENGTH_SHORT).show()
                             }
                         }
 
                         override fun onCancelled(error: DatabaseError) {
-                            // Handle error
                             Toast.makeText(itemView.context, "Failed to fetch cart data", Toast.LENGTH_SHORT).show()
                         }
                     })
                 } else {
-                    // Handle the case where the user is not logged in
                     Toast.makeText(itemView.context, "User not logged in", Toast.LENGTH_SHORT).show()
                 }
             }

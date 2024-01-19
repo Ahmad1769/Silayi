@@ -32,7 +32,6 @@ class MeasurementFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_measurement, container, false)
 
         val submitSizeButton = view.findViewById<AppCompatButton>(R.id.submitsize)
@@ -41,13 +40,13 @@ class MeasurementFragment : Fragment() {
             Toast.makeText(requireContext(), "username", Toast.LENGTH_SHORT).show()
             saveMeasurements(view)
         }
-
-        populateData(view)
-
         return view
     }
-
-    private fun saveMeasurements(view: View) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        populateData(view)
+    }
+        private fun saveMeasurements(view: View) {
         val measurementsMap = mutableMapOf<String, Pair<String, String>>()
         Toast.makeText(requireContext(), currentUserid, Toast.LENGTH_SHORT).show()
         val editTextIds = arrayOf(
@@ -67,7 +66,6 @@ class MeasurementFragment : Fragment() {
             if (measurementValue1.isNotEmpty() && measurementValue2.isNotEmpty()) {
                 measurementsMap["pair${(i / 2) + 1}"] = Pair(measurementValue1, measurementValue2)
             } else {
-                // Show error message or handle empty input
                 Toast.makeText(requireContext(), "Please fill all measurement fields", Toast.LENGTH_SHORT).show()
                 return
             }
@@ -86,7 +84,6 @@ class MeasurementFragment : Fragment() {
     }
 
     private fun populateData(view: View) {
-        // Check if the user is logged in
         currentUserid?.let { uid ->
             databaseReference.child(uid).get().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -116,7 +113,6 @@ class MeasurementFragment : Fragment() {
                         }
                     }
                 } else {
-                    // Handle the error
                     Toast.makeText(requireContext(), "Failed to fetch measurements data", Toast.LENGTH_SHORT)
                         .show()
                 }

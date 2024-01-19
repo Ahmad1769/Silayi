@@ -96,7 +96,7 @@ class Tailor_sign_in : AppCompatActivity() {
 
         val registerLink: TextView = findViewById(R.id.registerLink1)
         registerLink.setOnClickListener {
-            val registerIntent = Intent(this, RegisterActivity::class.java)
+            val registerIntent = Intent(this, tailor_registration::class.java)
             startActivity(registerIntent)
         }
     }
@@ -129,7 +129,6 @@ class Tailor_sign_in : AppCompatActivity() {
                         }
                     }
                 }    override fun onCancelled(error: DatabaseError) {
-                    // Handle the error
                     Toast.makeText(baseContext, "Error checking 'istailer' tag.", Toast.LENGTH_SHORT).show()
                 }
             })
@@ -137,10 +136,9 @@ class Tailor_sign_in : AppCompatActivity() {
     }
 
     private fun onSignInSuccess() {
-        // Example: Navigate to the HomeActivity after successful sign-in
-        val intent = Intent(this, Measurement::class.java)
-        Toast.makeText(this,"Hello going to intent",Toast.LENGTH_SHORT).show()
-        startActivity(intent)
+        val intent = Intent(this, OrderListActivity::class.java)
+//        Toast.makeText(this,"Hello going to intent",Toast.LENGTH_SHORT).show()
+//        startActivity(intent)
         finish()
     }
 

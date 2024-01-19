@@ -31,7 +31,6 @@ class Clothes : AppCompatActivity() {
         val productKeyword = intent.getStringExtra("clotheDescription")
         val price = intent.getIntExtra("clothePrice", 0)
 
-        // Update UI with the received data
         clothesNameTextView.text = clothesName
         productKeywordTextView.text = productKeyword
         priceTextView.text=price.toString()
@@ -42,7 +41,6 @@ class Clothes : AppCompatActivity() {
         }
 
         addToCartButton.setOnClickListener {
-            // Check if the user is logged in
             val currentUser = FirebaseAuth.getInstance().currentUser
             if (currentUser != null) {
 
@@ -74,7 +72,6 @@ class Clothes : AppCompatActivity() {
                                         }
                                     }
 
-                                // Update total price
                                 databaseReference.child(productName).child("totalPrice").setValue(newprice)
                                     .addOnCompleteListener { priceUpdateTask ->
                                         if (priceUpdateTask.isSuccessful) {
@@ -85,7 +82,6 @@ class Clothes : AppCompatActivity() {
                                     }
                             } else {
                                 Toast.makeText(this@Clothes, databaseReference.toString(), Toast.LENGTH_SHORT).show()
-                                // Product node doesn't exist, create a new node
                                 databaseReference.child(productName).child("quantity").setValue(quantity)
                                     .addOnCompleteListener { quantityUpdateTask ->
                                         if (quantityUpdateTask.isSuccessful) {
@@ -105,20 +101,17 @@ class Clothes : AppCompatActivity() {
                                     }
                             }
 
-                            // Initiate intent to open HomeScreen and show the cart fragment
                             val homeIntent = Intent(this@Clothes, HomeScreen::class.java)
                             homeIntent.putExtra("openCartFragment", true)
                             startActivity(homeIntent)
                         }
 
                         override fun onCancelled(databaseError: DatabaseError) {
-                            // Handle error
                             Toast.makeText(this@Clothes, "Error accessing database", Toast.LENGTH_SHORT).show()
                         }
                     })
                 }
             } else {
-                // User is not logged in, handle accordingly (e.g., prompt user to log in)
                 Toast.makeText(this, "Please log in to add items to the cart", Toast.LENGTH_SHORT).show()
             }
         }

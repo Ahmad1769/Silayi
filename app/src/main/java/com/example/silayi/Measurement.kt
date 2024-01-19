@@ -72,7 +72,6 @@ class Measurement : AppCompatActivity() {
         }
     }
     private fun populateData() {
-        // Check if the user is logged in
         currentUserid?.let { uid ->
             databaseReference.child(uid).get().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -102,7 +101,6 @@ class Measurement : AppCompatActivity() {
                         }
                     }
                 } else {
-                    // Handle the error
                     Toast.makeText(this, "Failed to fetch measurements data", Toast.LENGTH_SHORT)
                         .show()
                 }

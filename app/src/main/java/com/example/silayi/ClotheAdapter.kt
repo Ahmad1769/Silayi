@@ -20,7 +20,6 @@ class ClotheAdapter(private val context: Context) :
     private val clotheList: MutableList<Clothe> = mutableListOf()
 
     init {
-        // Fetch data from Firebase and populate the list
         fetchDataFromFirebase()
     }
 

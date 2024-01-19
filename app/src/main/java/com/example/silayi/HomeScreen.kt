@@ -1,5 +1,6 @@
 package com.example.silayi
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -33,17 +34,16 @@ class HomeScreen : AppCompatActivity() {
                     true
                 }
                 R.id.eye -> {
-                    replaceFragment(MeasurementFragment())
+                    startActivity(Intent(this,Measurement::class.java))
                     true
                 }
                 R.id.cart -> {
                     replaceFragment(Cart_Fragment())
                     true
                 }
-                R.id.person -> {
-                    // Replace with your PersonFragment
-                    true
-                }
+//                R.id.person -> {
+//                    true
+//                }
                 else -> false
             }
         }

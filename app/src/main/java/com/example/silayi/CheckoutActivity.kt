@@ -31,7 +31,6 @@ class CheckoutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
 
-        // Initialize views
         locationEditText = findViewById(R.id.editTextTextPersonName)
         addNewLocationButton = findViewById(R.id.addNewLocation)
         recyclerView = findViewById(R.id.checkout_recycle_view)
@@ -45,38 +44,27 @@ class CheckoutActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Initialize Firebase and fetch cart items
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             val userId = currentUser.uid
             databaseReference = FirebaseDatabase.getInstance().getReference("carts").child(userId)
-
-            // Fetch cart items from Firebase and update the UI
             fetchCartItems()
-
-            // Set click listeners or any other necessary setup
-
-            // Example of click listener for the confirm button
             confirmButton.setOnClickListener {
                 val address = locationEditText.text.toString().trim()
                 if (address.isEmpty()) {
                     Toast.makeText(this, "Please enter a delivery address", Toast.LENGTH_SHORT).show()
                 } else {
-                    // Check if the user has a registered address
                     confirmOrder(address)
                 }
             }
 
-            // Example of click listener for the cancel button
             cancelButton.setOnClickListener {
-                // Go back to the HomeScreen
                 onBackPressed()
             }
         }
     }
 
     private fun fetchCartItems() {
-        // Fetch cart items from Firebase and update the UI
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val cartItems: MutableList<Cartitem> = mutableListOf()
@@ -95,7 +83,6 @@ class CheckoutActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle error
                 Toast.makeText(this@CheckoutActivity, "Error accessing database", Toast.LENGTH_SHORT).show()
             }
         })

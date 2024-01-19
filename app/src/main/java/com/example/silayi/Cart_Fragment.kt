@@ -44,7 +44,6 @@ class Cart_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize views
         cartRecyclerView = view.findViewById(R.id.cart_recycleView)
         findTailorButton = view.findViewById(R.id.findtailor)
         applyCouponCodeEditText = view.findViewById(R.id.applycouponcode)
@@ -57,12 +56,10 @@ class Cart_Fragment : Fragment() {
         totalAmountText = view.findViewById(R.id.totalamount)
         proceedToCheckoutButton = view.findViewById(R.id.proceedtocheckout)
 
-        // Set up RecyclerView
         cartAdapter = CartAdapter(cartItems)
         cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         cartRecyclerView.adapter = cartAdapter
 
-        // Initialize Firebase and fetch cart items
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             val userId = currentUser.uid
@@ -92,7 +89,6 @@ class Cart_Fragment : Fragment() {
     }
 
     private fun fetchCartItems() {
-        // Fetch cart items from Firebase and update the UI
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 cartItems.clear()
@@ -110,22 +106,18 @@ class Cart_Fragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle error
             }
         })
     }
 
     private fun updateUI() {
-        // Update UI based on cart items
         cartAdapter.notifyDataSetChanged()
 
-        // Calculate subtotal, tax, and total
         val subtotal = cartItems.sumBy { it.totalPrice }
         val taxRate = 0.1 // 10% tax rate (you can adjust this)
         val tax = round(subtotal * taxRate).toInt()
         val total = subtotal + tax
 
-        // Update UI with calculated values
         subtotalAmountText.text = "$subtotal"
         taxAmountText.text = "$tax"
         totalAmountText.text = "$total"

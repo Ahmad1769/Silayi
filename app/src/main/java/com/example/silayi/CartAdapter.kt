@@ -36,7 +36,6 @@ class CartAdapter(private val cartItems: List<Cartitem>) :
         }
 
         holder.subtractBtn.setOnClickListener {
-            // Decrease quantity, update UI, and update Firebase
             if (cartItem.quantity > 1) {
                 cartItem.quantity--
                 cartItem.totalPrice =
@@ -47,17 +46,15 @@ class CartAdapter(private val cartItems: List<Cartitem>) :
             }
         }
 
-        holder.statusCategory.text = "X" // You can set the status dynamically if needed
+        holder.statusCategory.text = "X"
     }
 
     private fun updateUI(holder: CartViewHolder, cartItem: Cartitem) {
-        // Update UI with new quantity and total price
         holder.qtyBtn.text = cartItem.quantity.toString()
         holder.cartPrice.text = "$${cartItem.totalPrice}"
     }
 
     private fun updateFirebase(cartItem: Cartitem) {
-        // Update the quantity in Firebase
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             val userId = currentUser.uid
@@ -65,14 +62,13 @@ class CartAdapter(private val cartItems: List<Cartitem>) :
                 FirebaseDatabase.getInstance().getReference("carts").child(userId)
                     .child(cartItem.itemName)
 
-            // Update quantity and total price in Firebase
             databaseReference.child("quantity").setValue(cartItem.quantity)
             databaseReference.child("totalPrice").setValue(cartItem.totalPrice)
         }
     }
 
     private fun calculateTotalPrice(quantity: Int, price: Int): Int {
-        return  price/quantity // Assuming $14.00 as the base price
+        return  price/quantity
     }
 
     override fun getItemCount(): Int = cartItems.size

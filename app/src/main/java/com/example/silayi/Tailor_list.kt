@@ -19,8 +19,6 @@ class Tailor_list : AppCompatActivity() {
         tailorAdapter = tailor_adap()
         tailorRecyclerView.layoutManager = LinearLayoutManager(this)
         tailorRecyclerView.adapter = tailorAdapter
-
-        // Initialize Firebase and fetch tailors
         databaseReference = FirebaseDatabase.getInstance().getReference("users")
         fetchTailors()
     }
@@ -47,7 +45,6 @@ class Tailor_list : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle error
             }
         })
     }

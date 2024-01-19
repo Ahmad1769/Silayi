@@ -25,9 +25,7 @@ class Home_fragment : Fragment() {
         val recyclerView4: RecyclerView = view.findViewById(R.id.recommended_recyclerView)
 
         val adapterTailor = TailorAdapter(requireContext())
-        // val adapter2 = YourAdapter2()
          val adapterCloth = context?.let { ClotheAdapter(it) }
-        // val adapter4 = YourAdapter4()
 
         recyclerView1.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView1.adapter = adapterTailor

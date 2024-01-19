@@ -56,11 +56,9 @@ class CategoryFragment : Fragment() {
                     userNumber.text = usernum
                 }
                 override fun onCancelled(error: DatabaseError) {
-                    // Handle the error
                 }
             })
         }
-        // Set click listener for the logout button
         logoutButton.setOnClickListener {
             auth.signOut()
             val intent = Intent(context, MainActivity::class.java)

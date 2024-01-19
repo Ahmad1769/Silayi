@@ -15,10 +15,10 @@ class TailorAdapter(private val context: Context) :
     RecyclerView.Adapter<TailorAdapter.TailorViewHolder>() {
 
     private val tailorList = listOf(
-        Tailor("Ahmad ",5000, "image"),
-        Tailor("Rafay",6790, "image"),
-        Tailor("Hameed",1251, "image"),
-        Tailor("Ali",9511, "image"),
+        Tailor("Ahmad ",5000, R.drawable.profile),
+        Tailor("Rafay",6790,R.drawable.profile),
+        Tailor("Hameed",1251,R.drawable.profile),
+        Tailor("Ali",9511, R.drawable.profile),
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TailorViewHolder {
@@ -30,16 +30,12 @@ class TailorAdapter(private val context: Context) :
     override fun onBindViewHolder(holder: TailorViewHolder, position: Int) {
         val tailor = tailorList[position]
 
-        // Set data to views
         holder.name.text = tailor.name
         holder.price.text = tailor.price.toString()
-        holder.image.setImageResource(R.mipmap.ic_launcher)
+        holder.image.setImageResource(tailor.imageurl)
 
-        // Set click listener
         holder.cardView.setOnClickListener {
-            // Handle item click, e.g., open another activity
             val intent = Intent(context, HomeScreen::class.java)
-            // Add any necessary data to the intent
             context.startActivity(intent)
         }
     }
@@ -56,6 +52,6 @@ class TailorAdapter(private val context: Context) :
     data class Tailor(
         val name: String,
         val price: Int,
-        val imageurl: String
+        val imageurl: Int
     )
 }

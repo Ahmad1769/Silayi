@@ -30,8 +30,6 @@ class User_SignIn : AppCompatActivity() {
     private lateinit var forgetPasswordText: TextView
     private lateinit var auth: FirebaseAuth
 
-    private val RC_SIGN_IN = 9001
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_sign_in)
@@ -127,7 +125,6 @@ class User_SignIn : AppCompatActivity() {
                         }
                     }
                 }    override fun onCancelled(error: DatabaseError) {
-                    // Handle the error
                     Toast.makeText(baseContext, "Error checking 'istailer' tag.", Toast.LENGTH_SHORT).show()
                 }
             })
